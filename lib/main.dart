@@ -1,8 +1,7 @@
 
-
-import 'package:bible_q/bloc/passage_bloc.dart';
-import 'package:bible_q/bloc/passage_detail_bloc.dart';
-import 'package:bible_q/screens/home_screen.dart';
+import 'package:bible_q/presentation/detail/bloc/detail_bloc.dart';
+import 'package:bible_q/presentation/home/bloc/home_bloc.dart';
+import 'package:bible_q/presentation/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,8 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
     providers: [
-      BlocProvider(create: (context) => BlocPassage()),
-      BlocProvider(create: (context) => BlocPassageDetail())
+      BlocProvider(create: (context) => HomeBloc()),
+      BlocProvider(create: (context) => DetailBloc()),
     ], 
     child: const MaterialApp(
         debugShowCheckedModeBanner: false,
