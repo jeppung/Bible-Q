@@ -1,6 +1,5 @@
 import 'package:bible_q/models/passsage.dart';
 
-
 abstract class HomeState {}
 
 abstract class HomeActionState extends HomeState {}
@@ -19,9 +18,19 @@ class HomeErrorState extends HomeState {}
 
 class HomeNavigateToDetailActionState extends HomeActionState {
   final String abbr;
+  final int? chapter;
 
-  HomeNavigateToDetailActionState({required this.abbr});
+  HomeNavigateToDetailActionState({required this.abbr, required this.chapter});
 }
 
-class HomeSelectChapterState extends HomeActionState {}
+class HomeSelectChapterState extends HomeActionState {
+  final int? chapter;
 
+  HomeSelectChapterState({this.chapter});
+}
+
+class HomeSearchState extends HomeState {
+  final String? search;
+
+  HomeSearchState({this.search});
+}
